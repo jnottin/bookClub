@@ -1,0 +1,9 @@
+.app-title {
+    box-shadow: 5px 10px 18px #888888;
+    font-size: 30px;
+    text-decoration: none;
+    color: grey;
+    text-align: center;
+    border: 2px solid red;
+
+}

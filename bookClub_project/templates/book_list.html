@@ -1,7 +1,26 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/book_list.css' %}">
+{% endblock %}
+
+
 
 {% block content %}
-<h1>Book List</h1>
+<h1 class="book-list-title"><u> New York Times Best Seller List</u></u></h1>
+{% for book in books.results %}
 
+
+<div class="book_content_all">
+    <h2>{{book.rank}}</h2>
+    <img class="book-image" src="{{book.cover.items.0.volumeInfo.imageLinks.thumbnail}}" alt='{{book.book_details.0.title}} Cover'>
+    <h2 class="book-text-content">{{ book.book_details.0.title}} </h2>
+    <h2 class="book-text-content">By {{book.book_details.0.author}}</h2>
+    <h2 class="book-text-content">{{book.book_details.0.description}}</h2>
+    <a class="book-text-content" href="{{book.amazon_product_url}}">Find book on Amazon!</a>
+</div>
+
+{% endfor %}
 
 {% endblock %}

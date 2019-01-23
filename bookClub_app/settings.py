@@ -70,6 +70,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookClub_app.wsgi.application'
 
+# Django rest framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication'
+    ]
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
