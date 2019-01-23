@@ -1,0 +1,7 @@
+Stuff to add:
+    -scroll magic
+    -animation.css
+    -figure out base.css
+    -HIT GOOGLE BOOKS API LIMIT - figure out how to have the pull once for the book data, dont pull a million times
+    -If google api limit hit then show error message
+    -Use flip book css 

@@ -13,11 +13,22 @@
 
 
 <div class="book_content_all">
-    <h2>{{book.rank}}</h2>
-    <img class="book-image" src="{{book.cover.items.0.volumeInfo.imageLinks.thumbnail}}" alt='{{book.book_details.0.title}} Cover'>
+    <h2 class="book-rank">{{book.rank}}</h2>
+    <div class="book">
+        <div class="back"></div>
+        <div class="page6">{{book.book_details.0.description}}</div>
+        <div class="page5"></div>
+        <div class="page4"></div>
+        <div class="page3"></div>
+        <div class="page2"></div>
+        <div class="page1"></div>
+        <img class="front" src="https://i.imgur.com/4cJ5IaQ.jpg" alt='{{book.book_details.0.title}} Cover'>
+        <!-- <img class="front" src="{{book.cover.items.0.volumeInfo.imageLinks.thumbnail}}" alt='{{book.book_details.0.title}} Cover'> -->
+    </div>
     <h2 class="book-text-content">{{ book.book_details.0.title}} </h2>
     <h2 class="book-text-content">By {{book.book_details.0.author}}</h2>
-    <h2 class="book-text-content">{{book.book_details.0.description}}</h2>
+    <h2 class="book-text-content">Rank Last week: {{book.rank_last_week}}</h2>
+    <h2 class="book-text-content">Weeks On List: {{book.weeks_on_list}}</h2>
     <a class="book-text-content" href="{{book.amazon_product_url}}">Find book on Amazon!</a>
 </div>
 

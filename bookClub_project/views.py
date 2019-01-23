@@ -13,22 +13,22 @@ def book_list(request):
     books = response_books.json()
     books_results = books['results']
     print(books_results)
-    for book in books_results: 
-        if book['book_details'][0]['primary_isbn10']:
-            isbn = book['book_details'][0]['primary_isbn10']
-            response_covers = requests.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + "&key=" + googleBooks_apiKey)
-            cover_data = response_covers.json()
-            if cover_data['totalItems'] == 0:
-                isbn = book['isbns'][1]['isbn10']
-                response_covers = requests.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + "&key=" + googleBooks_apiKey)
-                cover_data = response_covers.json()
-        else: 
-            cover_data = "Missing Cover"
+    # for book in books_results: 
+    #     if book['book_details'][0]['primary_isbn10']:
+    #         isbn = book['book_details'][0]['primary_isbn10']
+    #         response_covers = requests.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + "&key=" + googleBooks_apiKey)
+    #         cover_data = response_covers.json()
+    #         if cover_data['totalItems'] == 0:
+    #             isbn = book['isbns'][1]['isbn10']
+    #             response_covers = requests.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + isbn + "&key=" + googleBooks_apiKey)
+    #             cover_data = response_covers.json()
+    #     else: 
+    #         cover_data = "Missing Cover"
 
-        book['cover'] = cover_data
+    #     book['cover'] = cover_data
         
     print(books)
-    print(book['cover'])
+    # print(book['cover'])
     return render(request, 'book_list.html', {
         'books': books,
     })
