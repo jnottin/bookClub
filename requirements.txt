@@ -3,3 +3,4 @@ psycopg2-binary==2.7.6.1
 pytz==2018.9
 whitenoise
 django-heroku
+gunicorn
