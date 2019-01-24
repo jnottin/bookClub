@@ -4,3 +4,4 @@ pytz==2018.9
 whitenoise
 django-heroku
 gunicorn
+requests
