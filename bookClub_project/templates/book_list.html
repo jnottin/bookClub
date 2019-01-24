@@ -17,7 +17,11 @@
     <label for="select_a_genre">Select A Genre: </label>
     <select method="POST" name='value'>
         {% for genre in genres %}
+        {% if genre.list_name_encoded == selected_genre %}
+        <option value="{{genre.list_name_encoded}}" selected>{{genre.display_name}}</option>
+        {% else %}
         <option value="{{genre.list_name_encoded}}">{{genre.display_name}}</option>
+        {% endif %}
         {% endfor %}
     </select>
     <input type="submit" value="Select">
@@ -40,8 +44,8 @@
         <div class="page3"></div>
         <div class="page2"></div>
         <div class="page1"></div>
-        <img class="front" src="https://i.imgur.com/4cJ5IaQ.jpg" alt='{{book.book_details.0.title}} Cover'>
-        <!-- <img class="front" src="{{book.cover.items.0.volumeInfo.imageLinks.thumbnail}}" alt='{{book.book_details.0.title}} Cover Not Available'> -->
+        <!-- <img class="front" src="https://i.imgur.com/4cJ5IaQ.jpg" alt='{{book.book_details.0.title}} Cover'> -->
+        <img class="front" src="{{book.cover.items.0.volumeInfo.imageLinks.thumbnail}}" alt='{{book.book_details.0.title}} Cover Not Available'>
     </div>
     <h2 class="book-text-content book-title">{{ book.book_details.0.title}} </h2>
     <h2 class="book-text-content book-nontitle">By {{book.book_details.0.author}}</h2>

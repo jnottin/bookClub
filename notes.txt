@@ -15,11 +15,10 @@ Problems:
 NEXT Things:
 
     FUNCTIONS:
-        -MANGA figure out, whats going on - Add sign for error if index out of range
-        -columns for display, not one per row
+        -results error...whats happening there?
         -add while loop for finding cover based on isbn
         -rank last week 0 - need to put "not on list last week"
     
     STYLE:
-    -
+    -columns for display, not one per row
     -Change background when genre changes
