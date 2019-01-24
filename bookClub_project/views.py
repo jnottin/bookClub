@@ -21,7 +21,7 @@ def book_list(request):
     response_books = requests.get('https://api.nytimes.com/svc/books/v3/lists.json?list-name=' + selected_genre +'&api-key=' + nyt_apiKey)
     books = response_books.json()
     books_results = books['results']
-    #Get Covers
+    # #Get Covers
     for book in books_results: 
         if book['book_details'][0]['primary_isbn10'] != 'None':
             isbn = book['book_details'][0]['primary_isbn10']

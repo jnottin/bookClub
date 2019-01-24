@@ -15,10 +15,16 @@ Problems:
 NEXT Things:
 
     FUNCTIONS:
-        -results error...whats happening there?
-        -add while loop for finding cover based on isbn
-        -rank last week 0 - need to put "not on list last week"
-    
+
+        PRIMARY:
+            -results error...whats happening there?
+            -add while loop for finding cover based on isbn
+        
     STYLE:
-    -columns for display, not one per row
-    -Change background when genre changes
+
+        PRIMARY:
+            -responsive columns/book content sizes
+            -Change background when genre changes
+
+        SECONDARY:
+            -find book on amazon link, style, maybe add google link

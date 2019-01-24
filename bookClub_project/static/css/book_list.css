@@ -13,10 +13,21 @@
   font-size: 15px;
 }
 
-.book_content_all {
+.all-books {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+  grid-auto-flow: row;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.all-books > .book_content_all {
     margin: 0 auto;
     text-align: center;
-    width: 30%;
+    width: 250px;
     box-shadow: 5px 10px 18px black;
     padding: 20px;
     margin-bottom: 50px;
@@ -28,7 +39,7 @@
     /* background-image: linear-gradient(to right, rgb(153, 221, 255, ), rgb(255, 230, 255)); */
     /* blue content */
     /* background-image: linear-gradient(to right, rgba(153, 221, 255, .2), rgba(153, 221, 255, 1)); */
-}
+  }
 
 .book-text-content {
     text-align: left;
