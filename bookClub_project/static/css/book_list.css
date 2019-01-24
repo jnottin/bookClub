@@ -54,6 +54,7 @@
 .book {
     transform-style: preserve-3d;
     height: 300px;
+    width: 200px;
     backface-visibility: visible;
     display: flex;
     justify-content: center;
