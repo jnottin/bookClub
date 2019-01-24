@@ -44,13 +44,17 @@
         <div class="page3"></div>
         <div class="page2"></div>
         <div class="page1"></div>
-        <!-- <img class="front" src="https://i.imgur.com/4cJ5IaQ.jpg" alt='{{book.book_details.0.title}} Cover'> -->
-        <img class="front" src="{{book.cover.items.0.volumeInfo.imageLinks.thumbnail}}" alt='{{book.book_details.0.title}} Cover Not Available'>
+        <img class="front" src="https://i.imgur.com/4cJ5IaQ.jpg" alt='{{book.book_details.0.title}} Cover'>
+        <!-- <img class="front" src="{{book.cover.items.0.volumeInfo.imageLinks.thumbnail}}" alt='{{book.book_details.0.title}} Cover Not Available'> -->
     </div>
     <h2 class="book-text-content book-title">{{ book.book_details.0.title}} </h2>
     <h2 class="book-text-content book-nontitle">By {{book.book_details.0.author}}</h2>
     <hr>
-    <h2 class="book-text-content book-nontitle">Rank Last week: {{book.rank_last_week}}</h2>
+    {% if book.rank_last_week == 0 %}
+    <h2 class="book-text-content book-nontitle">Rank Last Week: Not On List Last Week</h2>
+    {% else %}
+    <h2 class="book-text-content book-nontitle">Rank Last Week: {{book.rank_last_week}}</h2>
+    {% endif %}
     <h2 class="book-text-content book-nontitle">Weeks On List: {{book.weeks_on_list}}</h2>
     <!-- <h2 class="book-text-content book-nontitle">isbn_primary: {{book.book_details.0.primary_isbn10}}</h2>
     <h2 class="book-text-content book-nontitle">isbns: {{book.isbns}}</h2> -->
