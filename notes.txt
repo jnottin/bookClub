@@ -5,3 +5,21 @@ Stuff to add:
     -HIT GOOGLE BOOKS API LIMIT - figure out how to have the pull once for the book data, dont pull a million times
     -If google api limit hit then show error message
     -Use flip book css 
+
+
+Problems:
+    -When genre selected, page loads but dropdown goes to first item not selected, see how to specifiy selected
+    -
+
+
+NEXT Things:
+
+    FUNCTIONS:
+        -MANGA figure out, whats going on - Add sign for error if index out of range
+        -columns for display, not one per row
+        -add while loop for finding cover based on isbn
+        -rank last week 0 - need to put "not on list last week"
+    
+    STYLE:
+    -
+    -Change background when genre changes

@@ -1,10 +1,17 @@
-
 .book-list-title {
+  margin-top: 100px;
     font-size: 40px;
     text-align: center;
-    margin-top: 0;
+    z-index: 2;
 }
 
+.book-title {
+  font-size: 20px;  
+}
+
+.book-nontitle {
+  font-size: 15px;
+}
 
 .book_content_all {
     margin: 0 auto;
@@ -13,12 +20,17 @@
     box-shadow: 5px 10px 18px black;
     padding: 20px;
     margin-bottom: 50px;
-    background-image: linear-gradient(to right, rgb(153, 221, 255), rgb(255, 230, 255));
-    background-image: linear-gradient(to bottom right, rgb(153, 221, 255), rgb(255, 230, 255));
+    /* dark red */
+    background-image: linear-gradient(to right, rgba(153, 31, 0, .3), rgba(153, 31, 0, .6));
+    /* Grey */
+    /* background-image: linear-gradient(to right, rgba(102, 102, 102, .2), rgba(102, 102, 102, 1)); */
+    /* Blue to pink */
+    /* background-image: linear-gradient(to right, rgb(153, 221, 255, ), rgb(255, 230, 255)); */
+    /* blue content */
+    /* background-image: linear-gradient(to right, rgba(153, 221, 255, .2), rgba(153, 221, 255, 1)); */
 }
 
 .book-text-content {
-    font-size: 20px;  
     text-align: left;
     padding: 0 20px; 
     transition: all .2s ease-in-out;
@@ -32,6 +44,7 @@
     width: 50px;
     border: 3px solid black;
     padding: 5px;
+    padding-bottom: 2px; 
     font-size: 40px;
     margin-bottom: 4%; 
 }
@@ -41,25 +54,26 @@
 .book {
     transform-style: preserve-3d;
     height: 300px;
-    cursor: pointer;
     backface-visibility: visible;
-    text-align: center; 
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .front {
-    display: inline-block;
-  }
   
   .front, .back, .page1, .page2, .page3, .page4, .page5, .page6 {
     transform-style: preserve-3d;
     position: absolute;
     width: 200px;
     height: 100%;
-    top: 0; left: 0;
+    top: 0; 
     transform-origin: left center;
     transition: transform .5s ease-in-out, box-shadow .35s ease-in-out;
   }
+  
+  .front {
+    background: white;
+  } 
   
   .back {
     background: navy;
@@ -137,3 +151,16 @@
   .book:hover .back {
     transform: rotateY(-5deg) scale(1.1);
   }
+
+  .description-text {
+    font-size: 18px;
+    /* margin: 2px; */
+  }
+
+  .select-label {
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+  /* SELECT CUSTOM */
+  /*the container must be positioned relative:*/

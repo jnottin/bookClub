@@ -8,7 +8,23 @@
 
 
 {% block content %}
-<h1 class="book-list-title"><u> New York Times Best Seller List</u></u></h1>
+<h1 class="book-list-title"><u>New York Times Best Seller List</u></h1>
+
+
+
+<form action="/" method="post" class="select-label">
+    {% csrf_token %}
+    <label for="select_a_genre">Select A Genre: </label>
+    <select method="POST" name='value'>
+        {% for genre in genres %}
+        <option value="{{genre.list_name_encoded}}">{{genre.display_name}}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Select">
+</form>
+
+
+
 {% for book in books.results %}
 
 
@@ -16,22 +32,26 @@
     <h2 class="book-rank">{{book.rank}}</h2>
     <div class="book">
         <div class="back"></div>
-        <div class="page6">{{book.book_details.0.description}}</div>
+        <div class="page6">
+            <p class="description-text">{{book.book_details.0.description}}</p>
+        </div>
         <div class="page5"></div>
         <div class="page4"></div>
         <div class="page3"></div>
         <div class="page2"></div>
         <div class="page1"></div>
-        <img class="front" src="https://i.imgur.com/4cJ5IaQ.jpg" alt='{{book.book_details.0.title}} Cover'>
-        <!-- <img class="front" src="{{book.cover.items.0.volumeInfo.imageLinks.thumbnail}}" alt='{{book.book_details.0.title}} Cover'> -->
+        <!-- <img class="front" src="https://i.imgur.com/4cJ5IaQ.jpg" alt='{{book.book_details.0.title}} Cover'> -->
+        <img class="front" src="{{book.cover.items.0.volumeInfo.imageLinks.thumbnail}}" alt='{{book.book_details.0.title}} Cover Not Available'>
     </div>
-    <h2 class="book-text-content">{{ book.book_details.0.title}} </h2>
-    <h2 class="book-text-content">By {{book.book_details.0.author}}</h2>
-    <h2 class="book-text-content">Rank Last week: {{book.rank_last_week}}</h2>
-    <h2 class="book-text-content">Weeks On List: {{book.weeks_on_list}}</h2>
-    <a class="book-text-content" href="{{book.amazon_product_url}}">Find book on Amazon!</a>
+    <h2 class="book-text-content book-title">{{ book.book_details.0.title}} </h2>
+    <h2 class="book-text-content book-nontitle">By {{book.book_details.0.author}}</h2>
+    <hr>
+    <h2 class="book-text-content book-nontitle">Rank Last week: {{book.rank_last_week}}</h2>
+    <h2 class="book-text-content book-nontitle">Weeks On List: {{book.weeks_on_list}}</h2>
+    <a class="book-text-content book-nontitle" href="{{book.amazon_product_url}}">Find book on Amazon!</a>
 </div>
 
 {% endfor %}
+
 
 {% endblock %}
