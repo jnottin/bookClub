@@ -8,7 +8,7 @@
 
 
 {% block content %}
-<h1 class="book-list-title"><u>New York Times Best Seller List</u></h1>
+<h1 onload="backgroundColor()" class="book-list-title"><u>New York Times Best Seller List</u></h1>
 
 
 
@@ -60,5 +60,13 @@
     </div>
     {% endfor %}
 </div>
+
+
+<script>
+    function backgroundColor() {
+        console.log("ran")
+        document.getelementsbyclassname("book_content_all").style.backgroundImage = "linear-gradient(to right, rgba(" + backgroundColor + " .3), rgba(" + backgroundColor + " .6));"
+    }
+</script>
 
 {% endblock %}

@@ -1,14 +1,19 @@
 from django.shortcuts import render
 from .models import Book
 import requests
+from random import randint
 # from functions import getCover
 # import functions as f
 
 # Create your views here.
 nyt_apiKey = 'i2gBHvKpbi0ZxGtoRAzX85JBi8iOot7t'
 googleBooks_apiKey ='AIzaSyDs_cKUw7nk8l-QIVUVwyPlx1a3aRo_s2Q'
+background_colors = ['153, 31, 0,', '153, 221, 255,', '255, 230, 255']
+
 
 def book_list(request):
+    rand_color = randint(0, (len(background_colors)-1))
+    backgroundColor = background_colors[rand_color]
     selected_genre = 'hardcover-fiction'
     #Get NYT Best Seller genres
     response_genres = requests.get('https://api.nytimes.com/svc/books/v3/lists/names.json?&api-key=' + nyt_apiKey)
@@ -48,6 +53,7 @@ def book_list(request):
         'books': books,
         'genres': genres,
         'selected_genre': selected_genre,
+        'backgroundColor' : backgroundColor,
     })
 
 
